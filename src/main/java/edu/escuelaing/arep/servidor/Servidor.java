@@ -54,7 +54,13 @@ public static String PaginaResultado(Request req, Response res) {
   String[] lista=req.queryParams("num").split("\\s+");    
   ArrayList<Float> listaNumeros = new ArrayList<Float>();    
   for(int a=0;a<lista.length;a++){
+    try{
       listaNumeros.add(Float.parseFloat(lista[a]));
+    }
+    catch(Exception e){
+      System.out.print("Uno de los datos no es un numero");
+    }
+      
   }    
   String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"}";       
   return resultado;
