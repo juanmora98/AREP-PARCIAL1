@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 public class Servidor {
 
   public Servidor() {
-    System.out.println( "Hello World!" );
+    get("/hello", (req, res) -> "Hello Heroku");
    /**port(getPort());
    staticFiles.location("/pages");
    Gson json = new Gson();
