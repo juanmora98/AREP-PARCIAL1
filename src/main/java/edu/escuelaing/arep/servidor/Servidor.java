@@ -40,7 +40,7 @@ public String PaginaInicial(Request rq, Response rs){
   + "<h1>PARCIAL 1</h1>"
   + "<h2>AREP 2020-1</h2>"
   + "<h3>Ingrese los datos:</h3>"
-  + "<form action=\"/results\">"
+  + "<form action=\"/resultado\">"
   + "  Ingrese los números separados por espacio:<br>"
   + "  <input type=\"text\" name=\"num\" value=\"\">"
   + "  <br>"
