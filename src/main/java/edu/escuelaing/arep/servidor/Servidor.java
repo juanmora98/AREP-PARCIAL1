@@ -3,6 +3,8 @@ package edu.escuelaing.arep.servidor;
 
 import static spark.Spark.*;
 import com.google.gson.Gson;
+import edu.escuelaing.arep.Operations.*;
+
 
 
 public class Servidor {
