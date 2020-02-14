@@ -52,7 +52,7 @@ public String PaginaInicial(Request rq, Response rs){
 }
 
 public static String PaginaResultado(Request req, Response res) {        
-  ArrayList<String> lista = new ArrayList<String>(Arrays.asList(req.body().split("\\s+")));    
+  ArrayList<String> lista = new ArrayList<String>(Arrays.asList(req.body().split(" ")));    
   ArrayList<Float> listaNumeros = new ArrayList<Float>();    
   for(int a=0;a<lista.size();a++){
     try{
