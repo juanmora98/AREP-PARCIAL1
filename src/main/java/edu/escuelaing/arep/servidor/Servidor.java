@@ -6,7 +6,6 @@ import static spark.Spark.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.google.gson.Gson;
 import edu.escuelaing.arep.Operations.*;
 import spark.Request;
 import spark.Response;
@@ -63,9 +62,9 @@ public static String PaginaResultado(Request req, Response res) {
       System.out.print("Uno de los datos no es un numero");
     }
       
-  }    
-  //+ "\"lista ordenada\":"+Operations.MergeSort(lista)
-  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," +"}";
+  }   
+  //Operations.MergeSort(lista);
+  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":" + lista + "}";
   return resultado;
 } 
 
