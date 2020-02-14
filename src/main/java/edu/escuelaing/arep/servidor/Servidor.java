@@ -51,9 +51,11 @@ public String PaginaInicial(Request rq, Response rs){
   return pagina;
 }
 
-public static String PaginaResultado(Request req, Response res) {        
+public static ArrayList<String> PaginaResultado(Request req, Response res) {        
   ArrayList<String> lista = new ArrayList<String>();
   lista.addAll(Arrays.asList(req.queryParams("num").split("\\s+")));   
+  return lista;
+  /** 
   ArrayList<Float> listaNumeros = new ArrayList<Float>();    
   for(int a=0;a< lista.size();a++){
     try{
@@ -64,8 +66,9 @@ public static String PaginaResultado(Request req, Response res) {
     }
       
   }    
-  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":"+Operations.MergeSort(lista)+"}";       
+  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":"+Operations.MergeSort(lista)+"}";
   return resultado;
+  */
 } 
 
 
