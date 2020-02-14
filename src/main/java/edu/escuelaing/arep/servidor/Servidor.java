@@ -52,9 +52,10 @@ public String PaginaInicial(Request rq, Response rs){
 }
 
 public static String PaginaResultado(Request req, Response res) {        
-  ArrayList<String> lista = new ArrayList<String>(Arrays.asList(req.body().split(" ")));    
+  ArrayList<String> lista = new ArrayList<String>();
+  lista.addAll(Arrays.asList(req.queryParams("num").split("\\s+")));   
   ArrayList<Float> listaNumeros = new ArrayList<Float>();    
-  for(int a=0;a<lista.size();a++){
+  for(int a=0;a< lista.size();a++){
     try{
       listaNumeros.add(Float.parseFloat(lista.get(a)));
     }
@@ -63,7 +64,7 @@ public static String PaginaResultado(Request req, Response res) {
     }
       
   }    
-  String resultado = "{\"listaNumeros\":"+"\""+lista+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":"+Operations.MergeSort(lista)+"}";       
+  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":"+Operations.MergeSort(lista)+"}";       
   return resultado;
 } 
 

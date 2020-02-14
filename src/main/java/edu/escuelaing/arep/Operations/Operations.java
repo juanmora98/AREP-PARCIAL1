@@ -35,7 +35,7 @@ public class Operations{
                 resultado.add(izq.get(contIzq));
             }
             else{
-                contDer ++;
+                contIzq ++;
                 resultado.add(izq.get(contDer));
             }
         }
