@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<HTML>
+   <HEAD>
+      <TITLE>Calculator</TITLE>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script src="/js/calculator.js"></script>
+   </HEAD>
+   <BODY>
+      <center><h1> Calculadora de promedio y variacion estandar</h1></center>
+    <form>
+        Introducir los datos con los cuales desea calcular el promedio de esos datos y su variacion estandar<br>
+        <input id="data" type="text" name="data" placeholder="Ejemplo: 1,2,3,4"><br>
+        <br>
+        <input id="botonM" type="button" onclick="calculator.obtenerDatos()" value="Calcular">
+        <br>
+        <br>
+        Resultados<br>
+        <br><br><output id="Promedio">Promedio: </output>
+        <br><output id="Desviacion">Desviacion: </output>
+      </form>
+   </BODY>
+</HTML>
