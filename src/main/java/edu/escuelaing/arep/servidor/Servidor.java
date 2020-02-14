@@ -10,8 +10,9 @@ import edu.escuelaing.arep.Operations.*;
 public class Servidor {
 
   public Servidor() {
+    port(getPort());
     get("/hello", (req, res) -> "Hello Heroku");
-    
+    //get("/numeros", (req, res) -> PaginaInicial(req, res));
    /**port(getPort());
    staticFiles.location("/pages");
    Gson json = new Gson();
