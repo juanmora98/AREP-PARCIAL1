@@ -37,9 +37,8 @@ public String PaginaInicial(Request rq, Response rs){
   String pagina = "<!DOCTYPE html>"
   + "<html>"
   + "<body>"
-  + "<h1>PARCIAL 1</h1>"
-  + "<h2>AREP 2020-1</h2>"
-  + "<h3>Ingrese los datos:</h3>"
+  + "<h1>PARCIAL 1 AREP 2020-1</h1>"
+  + "<h2>Ingrese los datos:</h2>"
   + "<form action=\"/resultado\">"
   + "  Ingrese los números separados por espacio:<br>"
   + "  <input type=\"text\" name=\"num\" value=\"\">"
@@ -58,7 +57,7 @@ public static String PaginaResultado(Request req, Response res) {
   for(int a=0;a<lista.length;a++){
       listaNumeros.add(Float.parseFloat(lista[a]));
   }    
-  String resultado = "{\"lista\":"+"\""+listaNumeros+"\""+","+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"}";       
+  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"}";       
   return resultado;
 } 
 
