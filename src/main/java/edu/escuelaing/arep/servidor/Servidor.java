@@ -4,6 +4,7 @@ package edu.escuelaing.arep.servidor;
 import static spark.Spark.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import edu.escuelaing.arep.Operations.*;
@@ -51,18 +52,18 @@ public String PaginaInicial(Request rq, Response rs){
 }
 
 public static String PaginaResultado(Request req, Response res) {        
-  String[] lista=req.queryParams("num").split("\\s+");    
+  ArrayList<String> lista = new ArrayList<String>(Arrays.asList(req.body().split("\\s+")));    
   ArrayList<Float> listaNumeros = new ArrayList<Float>();    
-  for(int a=0;a<lista.length;a++){
+  for(int a=0;a<lista.size();a++){
     try{
-      listaNumeros.add(Float.parseFloat(lista[a]));
+      listaNumeros.add(Float.parseFloat(lista.get(a)));
     }
     catch(Exception e){
       System.out.print("Uno de los datos no es un numero");
     }
       
   }    
-  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"}";       
+  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":"+Operations.MergeSort(lista)+"}";       
   return resultado;
 } 
 
