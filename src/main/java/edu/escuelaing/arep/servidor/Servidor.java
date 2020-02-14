@@ -64,7 +64,8 @@ public static String PaginaResultado(Request req, Response res) {
     }
       
   }    
-  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," + "\"lista ordenada\":"+Operations.MergeSort(lista)+"}";
+  //+ "\"lista ordenada\":"+Operations.MergeSort(lista)
+  String resultado = "{\"listaNumeros\":"+"\""+listaNumeros+"\""+",\"sumatoria\":"+"\""+Operations.Sumatoria(listaNumeros)+"\"," +"}";
   return resultado;
 } 
 

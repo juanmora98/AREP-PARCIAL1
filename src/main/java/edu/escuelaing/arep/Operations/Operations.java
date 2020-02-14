@@ -39,10 +39,6 @@ public class Operations{
                 resultado.add(izq.get(contDer));
             }
         }
-
-
-
-
         return resultado;
     }
 
